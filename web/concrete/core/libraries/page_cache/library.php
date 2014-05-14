@@ -115,13 +115,13 @@ abstract class Concrete5_Library_PageCache {
 	public function getCacheKey($mixed) {
 		if ($mixed instanceof Page) {
 			if ($mixed->getCollectionPath() != '') {
-				return urlencode(trim($mixed->getCollectionPath(), '/'));
+				return urlencode(trim($mixed->cID, '/'));
 			} else if ($mixed->getCollectionID() == HOME_CID) {
 				return '!' . HOME_CID;
 			}			
 		} else if ($mixed instanceof Request) {
 			if ($mixed->getRequestPath() != '') {
-				return urlencode(trim($mixed->getRequestPath(), '/'));
+				return urlencode(trim($mixed->cID, '/'));
 			} else if ($mixed->getRequestCollectionID() == HOME_CID) {
 				return '!' . HOME_CID;
 			}			
