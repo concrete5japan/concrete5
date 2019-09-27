@@ -134,9 +134,9 @@ if ($_REQUEST['approveImmediately'] == 1) {
 		<?php  if (!$c->isGeneratedCollection()) { ?>
 			<?php echo BASE_URL . DIR_REL;?><?php  if (URL_REWRITING == false) { ?>/<?php echo DISPATCHER_FILENAME?><?php  } ?><?php 
 			$cPath = substr($c->cPath, strrpos($c->cPath, '/') + 1);
-			print htmlentities(substr($c->cPath, 0, strrpos($c->cPath, '/')),ENT_QUOTES,APP_CHARSET)?>/<input type="text" name="cHandle" value="<?= htmlentities($cPath,ENT_QUOTES,APP_CHARSET)?>" id="cHandle" maxlength="128"><input type="hidden" name="oldCHandle" id="oldCHandle" value="<?= htmlentities($c->getCollectionHandle(),ENT_QUOTES,APP_CHARSET)?>"><br /><br />
+			print htmlentities(substr($c->cPath, 0, strrpos($c->cPath, '/')),ENT_QUOTES,APP_CHARSET)?>/<input type="text" name="cHandle" value="<?php echo htmlentities($cPath,ENT_QUOTES,APP_CHARSET)?>" id="cHandle" maxlength="128"><input type="hidden" name="oldCHandle" id="oldCHandle" value="<?php echo htmlentities($c->getCollectionHandle(),ENT_QUOTES,APP_CHARSET)?>"><br /><br />
 		<?php } else { ?>
-			<?= $c->getCollectionHandle()?><br /><br />
+			<?php echo $c->getCollectionHandle()?><br /><br />
 		<?php } ?>
 			<span class="help-block"><?php echo t('This page must always be available from at least one URL. That URL is listed above.')?></span>
 		</div>

@@ -22,7 +22,7 @@ $dh = Loader::helper('date');
 		<?php $form = Loader::helper('form'); ?>
 
 		<div class="clearfix">
-			<?=$form->label('cName', t('Name'))?>
+			<?php echo $form->label('cName', t('Name'))?>
 			<div class="input"><input type="text" name="cName" value="" class="text span6" ></div>
 		</div>
 

@@ -185,7 +185,7 @@ foreach($t1 as $value) {
 			
 			<div class="input">
 				<select multiple name="fsID[]" class="chosen-select">
-					<optgroup label="<?=t('Sets')?>">
+					<optgroup label="<?php echo t('Sets')?>">
 					<?php foreach($s1 as $s) { 
 						$fsetName = $s->getFileSetName();
 						$i = 0;
@@ -195,7 +195,7 @@ foreach($t1 as $value) {
 						}
 						$fsetName2 = implode("-",$fsetName2);
 					?>
-						<option value="<?=$s->getFileSetID()?>"  <?php if ((is_array($searchRequest['fsID']) && in_array($s->getFileSetID(), $searchRequest['fsID'])) || (is_string($searchRequest['fsID']) && $searchRequest['fsID'] == $s->getFileSetID())) { ?> selected="selected" <?php } ?>><?= $fsetName2;?></option>
+						<option value="<?php echo $s->getFileSetID()?>"  <?php if ((is_array($searchRequest['fsID']) && in_array($s->getFileSetID(), $searchRequest['fsID'])) || (is_string($searchRequest['fsID']) && $searchRequest['fsID'] == $s->getFileSetID())) { ?> selected="selected" <?php } ?>><?php echo $fsetName2;?></option>
 					<?php } ?>
 					</optgroup>
 					<optgroup label="<?php echo t('Other')?>">
